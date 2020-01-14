@@ -8,7 +8,7 @@ type Resource struct {
 }
 
 // New returns a new Resource given a scheme and cid.
-func New(scheme, cid string) Resource {
+func New(scheme, cid string) *Resource {
 	return &Resource{
 		scheme: scheme,
 		cid:    cid,
