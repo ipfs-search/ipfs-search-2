@@ -13,4 +13,5 @@ type Interface interface {
 type SniffedResource struct {
 	*Resource
 	time.Time
+	Peer string
 }
