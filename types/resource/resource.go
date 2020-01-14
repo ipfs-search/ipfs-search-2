@@ -19,16 +19,3 @@ func New(scheme, cid string) Resource {
 func (r *Resource) Hash() string {
 	return fmt.Sprintf("%s-%s", r.scheme, r.cid)
 }
-
-// ResourceError wraps an error with a Resource
-type ResourceError struct {
-	Err      error
-	Resource *resource.Resource
-}
-
-// Unwrap yields the underlying error for a ResourceError.
-func (e *ResourceError) Unwrap() error { return e.wrappederr }
-
-func (e *ResourceError) Error() string {
-	return fmt.Sprintf("%v with %v", e.Err, e.Resource)
-}
